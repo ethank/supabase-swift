@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 26/12/23.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 #if canImport(FoundationNetworking)

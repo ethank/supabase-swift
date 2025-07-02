@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 31/10/24.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 /// A thread-safe subject that wraps a single value and provides async access to its updates.
@@ -41,7 +41,7 @@ package final class AsyncValueSubject<Value: Sendable>: Sendable {
 
   /// The current value stored in the subject.
   package var value: Value {
-    mutableState.value
+    mutableState.withValue { $0.value }
   }
 
   /// Resume the task awaiting the next iteration point by having it return normally from its suspension point with a given element.
@@ -81,7 +81,7 @@ package final class AsyncValueSubject<Value: Sendable>: Sendable {
 
   /// An AsyncStream that emits the current value and all subsequent updates.
   package var values: AsyncStream<Value> {
-    AsyncStream(bufferingPolicy: bufferingPolicy.value) { continuation in
+    AsyncStream(bufferingPolicy: bufferingPolicy.wrappedValue) { continuation in
       insert(continuation)
     }
   }

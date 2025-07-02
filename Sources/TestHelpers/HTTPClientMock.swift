@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 26/04/24.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 package actor HTTPClientMock: HTTPClientType {

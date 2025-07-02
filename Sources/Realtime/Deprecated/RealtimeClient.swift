@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 #if canImport(FoundationNetworking)

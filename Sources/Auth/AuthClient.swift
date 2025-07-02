@@ -1,4 +1,4 @@
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 #if canImport(AuthenticationServices)

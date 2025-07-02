@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 20/01/25.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 extension JSONDecoder {

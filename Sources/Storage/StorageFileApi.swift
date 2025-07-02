@@ -50,7 +50,7 @@ enum FileUpload {
 }
 
 #if DEBUG
-  import ConcurrencyExtras
+  // import ConcurrencyExtras - using local implementation
   let testingBoundary = LockIsolated<String?>(nil)
 #endif
 

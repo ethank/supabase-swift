@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 17/02/24.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 

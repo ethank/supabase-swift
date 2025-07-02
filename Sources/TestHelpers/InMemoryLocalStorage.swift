@@ -1,5 +1,5 @@
 import Auth
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 package final class InMemoryLocalStorage: AuthLocalStorage, @unchecked Sendable {

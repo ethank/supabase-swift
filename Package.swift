@@ -26,8 +26,6 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0"..<"4.0.0"),
     .package(url: "https://github.com/apple/swift-http-types.git", from: "1.3.0"),
-    .package(url: "https://github.com/pointfreeco/swift-clocks", from: "1.0.0"),
-    .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.1.0"),
     .package(url: "https://github.com/pointfreeco/swift-custom-dump", from: "1.3.2"),
     .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.17.0"),
     .package(url: "https://github.com/WeTransfer/Mocker", from: "3.0.0"),
@@ -36,9 +34,7 @@ let package = Package(
     .target(
       name: "Helpers",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         .product(name: "HTTPTypes", package: "swift-http-types"),
-        .product(name: "Clocks", package: "swift-clocks"),
       ]
     ),
     .testTarget(
@@ -51,7 +47,6 @@ let package = Package(
     .target(
       name: "Auth",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         .product(name: "Crypto", package: "swift-crypto"),
         "Helpers",
       ]
@@ -80,7 +75,6 @@ let package = Package(
     .testTarget(
       name: "FunctionsTests",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
         .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
         "Functions",
@@ -105,7 +99,6 @@ let package = Package(
     .target(
       name: "PostgREST",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         "Helpers",
       ]
     ),
@@ -123,7 +116,6 @@ let package = Package(
     .target(
       name: "Realtime",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         "Helpers",
       ]
     ),
@@ -160,7 +152,6 @@ let package = Package(
     .target(
       name: "Supabase",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         "Auth",
         "Functions",
         "PostgREST",
@@ -179,7 +170,6 @@ let package = Package(
     .target(
       name: "TestHelpers",
       dependencies: [
-        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
         .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
         "Auth",
         "Mocker",

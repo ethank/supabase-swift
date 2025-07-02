@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 18/10/23.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 extension JSONEncoder {

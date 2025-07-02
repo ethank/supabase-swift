@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 08/03/24.
 //
 
-import ConcurrencyExtras
+// import ConcurrencyExtras - using local implementation
 import Foundation
 
 /// A token for cancelling observations.
