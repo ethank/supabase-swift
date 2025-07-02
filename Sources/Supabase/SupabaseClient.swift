@@ -1,7 +1,6 @@
 import ConcurrencyExtras
 import Foundation
 import HTTPTypes
-import IssueReporting
 
 #if canImport(FoundationNetworking)
   import FoundationNetworking
@@ -21,7 +20,7 @@ public final class SupabaseClient: Sendable {
   /// Supabase Auth allows you to create and manage user sessions for access to data that is secured by access policies.
   public var auth: AuthClient {
     if options.auth.accessToken != nil {
-      reportIssue(
+      assertionFailure(
         """
         Supabase Client is configured with the auth.accessToken option,
         accessing supabase.auth is not possible.
@@ -403,7 +402,7 @@ public final class SupabaseClient: Sendable {
         try await self?._getAccessToken()
       }
     } else {
-      reportIssue(
+      assertionFailure(
         """
         You assigned a custom `accessToken` closure to the RealtimeClientV2. This might not work as you expect
         as SupabaseClient uses Auth for pulling an access token to send on the realtime channels.

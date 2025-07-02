@@ -7,7 +7,6 @@
 
 import ConcurrencyExtras
 import Foundation
-import XCTestDynamicOverlay
 
 package actor HTTPClientMock: HTTPClientType {
   package struct MockNotFound: Error {}
@@ -58,7 +57,7 @@ package actor HTTPClientMock: HTTPClientType {
       }
     }
 
-    XCTFail("Mock not found for: \(request)")
+    assertionFailure("Mock not found for: \(request)")
     throw MockNotFound()
   }
 }
